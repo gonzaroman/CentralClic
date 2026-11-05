@@ -19,6 +19,7 @@
   <a href="https://github.com/gonzaroman/CentralClic/releases"><img src="https://img.shields.io/github/downloads/gonzaroman/CentralClic/total" alt="Downloads"></a>
   <a href="https://github.com/gonzaroman/CentralClic/stargazers"><img src="https://img.shields.io/github/stars/gonzaroman/CentralClic?style=social" alt="GitHub stars"></a>
   <img src="https://img.shields.io/badge/macOS-13%2B-blue" alt="macOS 13+">
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/gonzaroman/CentralClic" alt="MIT license"></a>
 </p>
 
 <p align="center">
@@ -100,7 +101,7 @@ No. Pointer speed and acceleration only affect mice, and scroll speed and direct
 To change a click into a different button and to adjust scrolling, an app has to intercept mouse events, and macOS requires the Accessibility permission for that.
 
 **Is it free? Is there a Mac App Store version?**
-It's free. It can't be on the Mac App Store because it uses a private Apple framework to read the fingers and needs the Accessibility permission, which App Store apps can't use. Similar tools like BetterTouchTool and Mac Mouse Fix are distributed outside the store for the same reason.
+It's free and open source under the [MIT license](LICENSE). It can't be on the Mac App Store because it uses a private Apple framework to read the fingers and needs the Accessibility permission, which App Store apps can't use. Similar tools like BetterTouchTool and Mac Mouse Fix are distributed outside the store for the same reason.
 
 **How do I uninstall it?**
 Turn off *Open at Login*, quit CentralClic from its menu and drag it to the Trash. Your macOS mouse settings come back as soon as it quits. You can also remove it from System Settings → Privacy & Security → Accessibility.
@@ -126,7 +127,7 @@ You only need the Xcode Command Line Tools (`xcode-select --install`):
 It creates `build/CentralClic.app`, `dist/CentralClic.zip` and `dist/CentralClic.dmg`.
 
 - **Signing.** If a `CentralClic Local` certificate exists, `build.sh` signs with it; otherwise it signs ad hoc. Run `scripts/create-signing-cert.sh` once to create the certificate. A stable signature means macOS keeps the Accessibility permission across builds. To use a Developer ID and notarize, run `SIGN_IDENTITY="Developer ID Application: …" NOTARY_PROFILE=profile ./build.sh`.
-- **Screenshots.** `scripts/make-screenshots.sh` regenerates the images in `docs/screenshots` from the real settings window.
+- **Screenshots.** `scripts/make-screenshots.sh` regenerates the images in `docs/screenshots` from the real settings window. `scripts/make-social-preview.swift` draws `docs/social-preview.png`, the image shown when the link is shared.
 - **Logs.** `log stream --predicate 'subsystem == "com.gonzaroman.centralclic"'`
 
 ## Translations
@@ -140,5 +141,9 @@ If CentralClic makes your Magic Mouse better:
 - ⭐ **[Star this repository](https://github.com/gonzaroman/CentralClic)**. It's the best way to help other Magic Mouse users find it.
 - 📣 **Share it** on [X](https://twitter.com/intent/tweet?text=CentralClic%20adds%20middle%20click%20to%20the%20Apple%20Magic%20Mouse%2C%20with%20adjustable%20zones%20and%20speed.%20Free%20on%20GitHub%3A&url=https%3A%2F%2Fgithub.com%2Fgonzaroman%2FCentralClic), [Reddit](https://www.reddit.com/submit?url=https%3A%2F%2Fgithub.com%2Fgonzaroman%2FCentralClic&title=CentralClic%3A%20free%20middle%20click%20for%20the%20Magic%20Mouse%20on%20Mac), [LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fgithub.com%2Fgonzaroman%2FCentralClic) or [Hacker News](https://news.ycombinator.com/submitlink?u=https%3A%2F%2Fgithub.com%2Fgonzaroman%2FCentralClic&t=CentralClic%3A%20middle%20click%20for%20the%20Magic%20Mouse).
 - 🐞 **Report bugs or suggest ideas** in [Issues](https://github.com/gonzaroman/CentralClic/issues).
+
+## License
+
+[MIT](LICENSE) © gonzaroman
 
 <sub>Magic Mouse, Mac and macOS are trademarks of Apple Inc. CentralClic is an independent project and isn't affiliated with or endorsed by Apple.</sub>
