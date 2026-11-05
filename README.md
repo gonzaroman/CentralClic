@@ -16,8 +16,6 @@
 
 <p align="center">
   <a href="https://github.com/gonzaroman/CentralClic/releases/latest"><img src="https://img.shields.io/github/v/release/gonzaroman/CentralClic?label=release" alt="Latest release"></a>
-  <a href="https://github.com/gonzaroman/CentralClic/releases"><img src="https://img.shields.io/github/downloads/gonzaroman/CentralClic/total" alt="Downloads"></a>
-  <a href="https://github.com/gonzaroman/CentralClic/stargazers"><img src="https://img.shields.io/github/stars/gonzaroman/CentralClic?style=social" alt="GitHub stars"></a>
   <img src="https://img.shields.io/badge/macOS-13%2B-blue" alt="macOS 13+">
   <a href="LICENSE"><img src="https://img.shields.io/github/license/gonzaroman/CentralClic" alt="MIT license"></a>
 </p>
