@@ -12,8 +12,8 @@ cd "$(dirname "$0")"
 APP_NAME="Magic Middle Click"   # what users see (the .app name)
 EXECUTABLE="MagicMiddleClick"   # binary name, must match CFBundleExecutable in Resources/Info.plist
 ARTIFACT="MagicMiddleClick"     # name of the .zip and .dmg (no spaces, for download URLs)
-VERSION="1.0.1"
-BUILD_NUMBER="2"
+VERSION="1.0.2"
+BUILD_NUMBER="3"
 MIN_OS="13.0"
 LOCAL_IDENTITY="Magic Middle Click Local"
 if [ -z "${SIGN_IDENTITY:-}" ]; then

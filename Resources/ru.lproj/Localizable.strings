@@ -75,9 +75,10 @@
 "Magic Middle Click is up to date." = "У вас последняя версия Magic Middle Click.";
 "Not checked yet." = "Ещё не проверялось.";
 "Optimize" = "Оптимизировать";
-"Sets a fast pointer and classic scrolling, like a mouse on Windows. If macOS acceleration is on, it opens System Settings so you can turn it off." = "Включает быстрый указатель и классическую прокрутку, как у мыши в Windows. Если ускорение macOS включено, открывает Системные настройки, чтобы его отключить.";
 "Pointer acceleration (macOS)" = "Ускорение указателя (macOS)";
 "On" = "Вкл.";
 "Off" = "Выкл.";
 "Open Mouse Settings…" = "Открыть настройки мыши…";
 "Most people coming from Windows prefer it off: the pointer moves the same distance for the same hand movement. Turn it off in System Settings → Mouse → Advanced. The speed above keeps working." = "Большинство пришедших с Windows предпочитают его отключать: указатель проходит одно и то же расстояние при одинаковом движении руки. Отключите его в Системных настройках → Мышь → Дополнительно. Скорость выше продолжает работать.";
+"Sets classic scrolling and a Windows-like pointer speed. macOS pointer acceleration has to be off: if it's on, it opens System Settings and finishes as soon as you turn it off." = "Включает классическую прокрутку и скорость указателя как в Windows. Ускорение указателя macOS должно быть выключено: если оно включено, откроются Системные настройки, а настройка завершится, как только вы его выключите.";
+"Turn off Pointer acceleration in System Settings → Mouse → Advanced. Magic Middle Click will set the speed as soon as it's off." = "Выключите «Ускорение указателя» в Системных настройках → Мышь → Дополнительно. Magic Middle Click установит скорость, как только оно будет выключено.";

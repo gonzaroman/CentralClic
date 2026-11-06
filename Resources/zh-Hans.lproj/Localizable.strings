@@ -75,9 +75,10 @@
 "Magic Middle Click is up to date." = "Magic Middle Click 已是最新版本。";
 "Not checked yet." = "尚未检查。";
 "Optimize" = "优化";
-"Sets a fast pointer and classic scrolling, like a mouse on Windows. If macOS acceleration is on, it opens System Settings so you can turn it off." = "设置快速指针和经典滚动方式，就像 Windows 上的鼠标一样。如果 macOS 的加速处于打开状态，将打开“系统设置”以便你将其关闭。";
 "Pointer acceleration (macOS)" = "指针加速（macOS）";
 "On" = "打开";
 "Off" = "关闭";
 "Open Mouse Settings…" = "打开鼠标设置…";
 "Most people coming from Windows prefer it off: the pointer moves the same distance for the same hand movement. Turn it off in System Settings → Mouse → Advanced. The speed above keeps working." = "大多数从 Windows 转来的用户更喜欢关闭它：同样的手部动作，指针总是移动相同的距离。请在“系统设置”→“鼠标”→“高级”中关闭它。上面的速度仍然有效。";
+"Sets classic scrolling and a Windows-like pointer speed. macOS pointer acceleration has to be off: if it's on, it opens System Settings and finishes as soon as you turn it off." = "设置经典滚动方式和类似 Windows 的指针速度。macOS 的指针加速必须关闭：如果它处于打开状态，将打开“系统设置”，并在你关闭后立即完成设置。";
+"Turn off Pointer acceleration in System Settings → Mouse → Advanced. Magic Middle Click will set the speed as soon as it's off." = "请在“系统设置”→“鼠标”→“高级”中关闭“指针加速”。关闭后，Magic Middle Click 会立即设置速度。";

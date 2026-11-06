@@ -75,9 +75,10 @@
 "Magic Middle Click is up to date." = "Magic Middle Click è aggiornato.";
 "Not checked yet." = "Non ancora controllato.";
 "Optimize" = "Ottimizza";
-"Sets a fast pointer and classic scrolling, like a mouse on Windows. If macOS acceleration is on, it opens System Settings so you can turn it off." = "Imposta un puntatore veloce e lo scorrimento classico, come un mouse su Windows. Se l’accelerazione di macOS è attiva, apre Impostazioni di Sistema per disattivarla.";
 "Pointer acceleration (macOS)" = "Accelerazione del puntatore (macOS)";
 "On" = "Attiva";
 "Off" = "Disattivata";
 "Open Mouse Settings…" = "Apri impostazioni del mouse…";
 "Most people coming from Windows prefer it off: the pointer moves the same distance for the same hand movement. Turn it off in System Settings → Mouse → Advanced. The speed above keeps working." = "Chi arriva da Windows di solito la preferisce disattivata: il puntatore percorre la stessa distanza per lo stesso movimento della mano. Disattivala in Impostazioni di Sistema → Mouse → Avanzate. La velocità sopra continua a funzionare.";
+"Sets classic scrolling and a Windows-like pointer speed. macOS pointer acceleration has to be off: if it's on, it opens System Settings and finishes as soon as you turn it off." = "Imposta lo scorrimento classico e una velocità del puntatore come su Windows. L’accelerazione del puntatore di macOS deve essere disattivata: se è attiva, apre Impostazioni di Sistema e completa non appena la disattivi.";
+"Turn off Pointer acceleration in System Settings → Mouse → Advanced. Magic Middle Click will set the speed as soon as it's off." = "Disattiva «Accelerazione del puntatore» in Impostazioni di Sistema → Mouse → Avanzate. Magic Middle Click imposterà la velocità appena sarà disattivata.";

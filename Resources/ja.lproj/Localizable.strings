@@ -75,9 +75,10 @@
 "Magic Middle Click is up to date." = "Magic Middle Click は最新です。";
 "Not checked yet." = "まだ確認していません。";
 "Optimize" = "最適化";
-"Sets a fast pointer and classic scrolling, like a mouse on Windows. If macOS acceleration is on, it opens System Settings so you can turn it off." = "Windows のマウスのように、速いポインタとクラシックなスクロールに設定します。macOS の加速がオンの場合は、オフにできるよう「システム設定」を開きます。";
 "Pointer acceleration (macOS)" = "ポインタの加速（macOS）";
 "On" = "オン";
 "Off" = "オフ";
 "Open Mouse Settings…" = "マウス設定を開く…";
 "Most people coming from Windows prefer it off: the pointer moves the same distance for the same hand movement. Turn it off in System Settings → Mouse → Advanced. The speed above keeps working." = "Windows から来た人の多くはオフを好みます。同じ手の動きでポインタが常に同じ距離を移動するからです。「システム設定」→「マウス」→「詳細」でオフにしてください。上の速度は引き続き機能します。";
+"Sets classic scrolling and a Windows-like pointer speed. macOS pointer acceleration has to be off: if it's on, it opens System Settings and finishes as soon as you turn it off." = "クラシックなスクロールと Windows のようなポインタ速度に設定します。macOS のポインタの加速はオフにする必要があります。オンの場合は「システム設定」を開き、オフにした時点で設定を完了します。";
+"Turn off Pointer acceleration in System Settings → Mouse → Advanced. Magic Middle Click will set the speed as soon as it's off." = "「システム設定」→「マウス」→「詳細」で「ポインタの加速」をオフにしてください。オフになるとすぐに Magic Middle Click が速度を設定します。";

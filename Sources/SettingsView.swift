@@ -259,9 +259,20 @@ private struct MotionTab: View {
                 }
                 .buttonStyle(.borderedProminent)
                 .controlSize(.large)
-                Text(L("Sets a fast pointer and classic scrolling, like a mouse on Windows. If macOS acceleration is on, it opens System Settings so you can turn it off."))
+                Text(L("Sets classic scrolling and a Windows-like pointer speed. macOS pointer acceleration has to be off: if it's on, it opens System Settings and finishes as soon as you turn it off."))
                     .font(.caption).foregroundStyle(.secondary)
                     .fixedSize(horizontal: false, vertical: true)
+            }
+
+            if settings.optimizeWaitingForMacOS {
+                HStack(alignment: .top, spacing: 8) {
+                    Image(systemName: "hourglass").foregroundStyle(.orange)
+                    Text(L("Turn off Pointer acceleration in System Settings → Mouse → Advanced. Magic Middle Click will set the speed as soon as it's off."))
+                        .font(.callout)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+                .padding(10)
+                .background(RoundedRectangle(cornerRadius: 8).fill(Color.orange.opacity(0.12)))
             }
 
             SpeedRow(title: L("Pointer speed"),

@@ -11,9 +11,9 @@ final class MouseTuning {
     static let pointerRange: ClosedRange<Double> = 0...20
     /// Maximum of the pointer speed slider in System Settings.
     static let systemPointerMax = 3.0
-    /// Speed set by Optimize. Tested on a Magic Mouse; it applies on top of macOS's own
-    /// "no acceleration" mode, which is the closest to how mice feel on Windows.
-    static let optimizedPointerSpeed = 10.0
+    /// Speed set by Optimize, only once macOS pointer acceleration is off. In that linear mode the value is a
+    /// plain multiplier, so it must stay low: 1.8 was picked by hand on a Magic Mouse (10 was uncontrollable).
+    static let optimizedPointerSpeed = 1.8
     /// Scrolling multiplier (1 = same as macOS).
     static let scrollMultiplierRange: ClosedRange<Double> = 0.2...5
 

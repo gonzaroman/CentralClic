@@ -122,15 +122,28 @@ final class AppSettings: ObservableObject {
     func refreshSystemState() {
         let off = tuning.systemAccelerationOff
         if off != systemAccelerationOff { systemAccelerationOff = off }
+        // Optimize was waiting for the user to turn macOS acceleration off: finish it now.
+        if off && optimizeWaitingForMacOS {
+            optimizeWaitingForMacOS = false
+            pointerSpeed = MouseTuning.optimizedPointerSpeed
+        }
     }
 
-    /// The setup closest to how mice feel on Windows: a fast pointer and classic scrolling. It works best
-    /// with macOS pointer acceleration off, which only System Settings can change, so it opens it if needed.
+    /// Optimize was pressed while macOS acceleration was on; it finishes once the user turns it off.
+    @Published private(set) var optimizeWaitingForMacOS = false
+
+    /// The setup closest to how mice feel on Windows: macOS pointer acceleration off (linear movement), a
+    /// moderate speed and classic scrolling. Acceleration can only be turned off in System Settings, and with
+    /// it on a speed meant for linear mode would be uncontrollable, so the speed is applied only once it's off.
     func optimize() {
-        pointerSpeed = MouseTuning.optimizedPointerSpeed
         naturalScroll = false
         refreshSystemState()
-        if !systemAccelerationOff { tuning.openMouseSettings() }
+        if systemAccelerationOff {
+            pointerSpeed = MouseTuning.optimizedPointerSpeed
+        } else {
+            optimizeWaitingForMacOS = true
+            tuning.openMouseSettings()
+        }
     }
 
     /// Cleans up settings from earlier versions.

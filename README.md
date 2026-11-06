@@ -40,7 +40,7 @@ The Apple Magic Mouse has no middle button, and macOS has no setting to add one.
 - **Adjustable zones.** Drag the lines on the mouse drawing or use the sliders. The default is 36% / 28% / 36%, and the left zone never goes below 15%, so normal clicking always works.
 - **Live finger view.** See your fingers on the mouse and which zone each one would click.
 - **Pointer speed beyond the macOS maximum**, from 0 to 20. System Settings stops at 3.
-- **Optimize button for a Windows-like feel.** One click sets a fast pointer and classic scrolling, and takes you to macOS's own "no acceleration" setting. That combination is the closest to how a mouse feels on Windows: direct and predictable, with the speed you choose.
+- **Optimize button for a Windows-like feel.** It sets classic scrolling and takes you to macOS's own "no acceleration" setting. As soon as you turn acceleration off, it sets a moderate pointer speed. That combination is the closest to how a mouse feels on Windows: direct and predictable.
 - **Magic Mouse scrolling speed**, from ×0.2 to ×5.
 - **Natural or classic scrolling for the mouse only.** Keep natural scrolling on the trackpad and classic scrolling on the Magic Mouse, or the other way round. macOS normally forces one setting for both.
 - **Update notifications** when a new version is released, plus *Check for Updates…* in the menu.
@@ -87,7 +87,7 @@ It's tested with the original Magic Mouse. Magic Mouse 2 and the USB‑C Magic M
 Turn off **Pointer acceleration** in System Settings → Mouse → Advanced. Magic Middle Click shows whether it's on or off and has a button to open that setting. Its speed slider keeps working with acceleration off, so you get linear movement at the speed you want. The **Optimize** button does it all in one go.
 
 **How do I make the Magic Mouse feel like a mouse on Windows?**
-Open Magic Middle Click → *Movement* and click **Optimize**. It sets a fast pointer and classic scrolling, and if macOS pointer acceleration is on, it opens System Settings so you can turn it off. Then fine-tune the speed slider to taste.
+Open Magic Middle Click → *Movement* and click **Optimize**. It sets classic scrolling. If macOS pointer acceleration is on, it opens System Settings so you can turn it off, and sets a moderate pointer speed as soon as you do. Then fine-tune the speed slider to taste.
 
 **Can I make my mouse faster than the macOS maximum?**
 Yes. The *Pointer speed* slider goes up to 20; System Settings stops at 3.
