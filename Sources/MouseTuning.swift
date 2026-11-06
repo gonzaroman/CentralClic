@@ -1,4 +1,4 @@
-import Foundation
+import AppKit
 import IOKit.hidsystem
 
 /// Mouse pointer speed and acceleration, through the macOS HID event system.
@@ -8,9 +8,12 @@ import IOKit.hidsystem
 final class MouseTuning {
     static let shared = MouseTuning()
 
-    static let pointerRange: ClosedRange<Double> = 0...10
+    static let pointerRange: ClosedRange<Double> = 0...20
     /// Maximum of the pointer speed slider in System Settings.
     static let systemPointerMax = 3.0
+    /// Speed set by Optimize. Tested on a Magic Mouse; it applies on top of macOS's own
+    /// "no acceleration" mode, which is the closest to how mice feel on Windows.
+    static let optimizedPointerSpeed = 10.0
     /// Scrolling multiplier (1 = same as macOS).
     static let scrollMultiplierRange: ClosedRange<Double> = 0.2...5
 
@@ -23,6 +26,8 @@ final class MouseTuning {
         static let pointer = "com.apple.mouse.scaling"
         static let scroll = "com.apple.scrollwheel.scaling"
         static let natural = "com.apple.swipescrolldirection"
+        /// System Settings → Mouse → Advanced → Pointer acceleration (true = acceleration off).
+        static let linear = "com.apple.mouse.linear"
     }
 
     private let client = IOHIDEventSystemClientCreateSimpleClient(kCFAllocatorDefault)
@@ -31,14 +36,21 @@ final class MouseTuning {
     var systemPointerSpeed: Double { MouseTuning.globalDouble(PrefKey.pointer) ?? 1.0 }
     var systemNaturalScroll: Bool { (UserDefaults.standard.object(forKey: PrefKey.natural) as? Bool) ?? true }
 
+    /// true if pointer acceleration is turned off in macOS. Apps can't change it: macOS rejects
+    /// HIDUseLinearScalingMouseAcceleration from anything but the system, and the Magic Mouse's own HID
+    /// service is hidden from apps. So the app reads it and sends the user to System Settings.
+    var systemAccelerationOff: Bool {
+        CFPreferencesAppSynchronize(kCFPreferencesAnyApplication)
+        return (UserDefaults.standard.object(forKey: PrefKey.linear) as? NSNumber)?.boolValue ?? false
+    }
+
+    /// Opens System Settings → Mouse, where pointer acceleration is turned off (under Advanced).
+    func openMouseSettings() {
+        NSWorkspace.shared.open(URL(string: "x-apple.systempreferences:com.apple.Mouse-Settings.extension")!)
+    }
+
     func setPointerSpeed(_ value: Double) { set(HIDKey.pointer, value) }
     func restorePointerSpeed() { set(HIDKey.pointer, systemPointerSpeed) }
-
-    /// Turns pointer acceleration off. A negative acceleration (-1) is how the HID system has always meant
-    /// "no acceleration": the pointer moves the same distance for the same hand movement, at a fixed speed.
-    /// (The key macOS itself uses for this, HIDUseLinearScalingMouseAcceleration, can only be set by the
-    /// system: it rejects it from regular apps.)
-    func setAccelerationOff() { set(HIDKey.pointer, -1) }
 
     /// Puts the scroll acceleration back to the macOS value. Only used to undo what an earlier version
     /// of the app changed (macOS doesn't use it for Magic Mouse touch scrolling).

@@ -48,8 +48,6 @@
 "Reset" = "リセット";
 "Pointer speed" = "ポインタの速度";
 "System Settings goes up to %@; here you can go further." = "「システム設定」では %@ までですが、ここではそれ以上に設定できます。";
-"Turn off pointer acceleration" = "ポインタの加速をオフにする";
-"Without acceleration, the pointer always moves the same distance for each centimeter you move the mouse, fast or slow. macOS then uses a fixed speed, so the speed slider is turned off." = "加速なしでは、速く動かしても遅く動かしても、マウスを 1 センチ動かすごとにポインタは常に同じ距離を移動します。このとき macOS は固定の速度を使うため、速度のスライダは無効になります。";
 "Scrolling speed" = "スクロールの速さ";
 "When you slide your finger on the mouse. ×1 is the macOS speed. Magic Mouse only." = "マウス上で指をスライドしたとき。×1 は macOS の速さです。Magic Mouse のみ。";
 "Scroll direction" = "スクロールの方向";
@@ -76,3 +74,10 @@
 "Couldn’t check for updates." = "アップデートを確認できませんでした。";
 "Magic Middle Click is up to date." = "Magic Middle Click は最新です。";
 "Not checked yet." = "まだ確認していません。";
+"Optimize" = "最適化";
+"Sets a fast pointer and classic scrolling, like a mouse on Windows. If macOS acceleration is on, it opens System Settings so you can turn it off." = "Windows のマウスのように、速いポインタとクラシックなスクロールに設定します。macOS の加速がオンの場合は、オフにできるよう「システム設定」を開きます。";
+"Pointer acceleration (macOS)" = "ポインタの加速（macOS）";
+"On" = "オン";
+"Off" = "オフ";
+"Open Mouse Settings…" = "マウス設定を開く…";
+"Most people coming from Windows prefer it off: the pointer moves the same distance for the same hand movement. Turn it off in System Settings → Mouse → Advanced. The speed above keeps working." = "Windows から来た人の多くはオフを好みます。同じ手の動きでポインタが常に同じ距離を移動するからです。「システム設定」→「マウス」→「詳細」でオフにしてください。上の速度は引き続き機能します。";

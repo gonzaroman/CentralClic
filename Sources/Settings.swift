@@ -47,15 +47,9 @@ final class AppSettings: ObservableObject {
         }
     }
 
-    /// Turn off pointer acceleration. The pointer then moves at a fixed speed, so `pointerSpeed` doesn't apply.
-    @Published var disableAcceleration: Bool {
-        didSet {
-            defaults.set(disableAcceleration, forKey: Key.disableAcceleration)
-            // Turning acceleration back on without a custom speed: go back to the macOS speed.
-            if oldValue && !disableAcceleration && pointerSpeed == nil { tuning.restorePointerSpeed() }
-            applyMotion()
-        }
-    }
+    /// Whether pointer acceleration is off in macOS (System Settings → Mouse → Advanced). Read-only for the app;
+    /// refreshed while the settings window is open.
+    @Published private(set) var systemAccelerationOff = false
 
     /// Magic Mouse scrolling multiplier (1 = same as macOS), or nil to leave it alone.
     @Published var scrollMultiplier: Double? {
@@ -80,7 +74,7 @@ final class AppSettings: ObservableObject {
         pointerSpeed = (defaults.object(forKey: Key.pointerSpeed) as? Double).map { min(max($0, MouseTuning.pointerRange.lowerBound), MouseTuning.pointerRange.upperBound) }
         scrollMultiplier = (defaults.object(forKey: Key.scrollMultiplier) as? Double).map { min(max($0, MouseTuning.scrollMultiplierRange.lowerBound), MouseTuning.scrollMultiplierRange.upperBound) }
         naturalScroll = defaults.object(forKey: Key.naturalScroll) as? Bool
-        disableAcceleration = defaults.bool(forKey: Key.disableAcceleration)
+        systemAccelerationOff = tuning.systemAccelerationOff
         migrateOldSettings()
         push()
     }
@@ -110,12 +104,7 @@ final class AppSettings: ObservableObject {
             EventTap.shared.scrollMultiplier = 1
             return
         }
-        // Without acceleration the speed is fixed by macOS, so a custom speed only applies with acceleration on.
-        if disableAcceleration {
-            tuning.setAccelerationOff()
-        } else if let pointerSpeed {
-            tuning.setPointerSpeed(pointerSpeed)
-        }
+        if let pointerSpeed { tuning.setPointerSpeed(pointerSpeed) }
         EventTap.shared.scrollMultiplier = scrollMultiplier ?? 1
         let wantNatural = naturalScroll ?? tuning.systemNaturalScroll
         EventTap.shared.invertMouseScroll = wantNatural != tuning.systemNaturalScroll
@@ -124,9 +113,24 @@ final class AppSettings: ObservableObject {
 
     /// Puts the macOS values back (when the app is turned off or quits).
     func restoreSystemMotion() {
-        if disableAcceleration || pointerSpeed != nil { tuning.restorePointerSpeed() }
+        if pointerSpeed != nil { tuning.restorePointerSpeed() }
         EventTap.shared.invertMouseScroll = false
         EventTap.shared.scrollMultiplier = 1
+    }
+
+    /// Re-reads the macOS settings the app shows but can't change.
+    func refreshSystemState() {
+        let off = tuning.systemAccelerationOff
+        if off != systemAccelerationOff { systemAccelerationOff = off }
+    }
+
+    /// The setup closest to how mice feel on Windows: a fast pointer and classic scrolling. It works best
+    /// with macOS pointer acceleration off, which only System Settings can change, so it opens it if needed.
+    func optimize() {
+        pointerSpeed = MouseTuning.optimizedPointerSpeed
+        naturalScroll = false
+        refreshSystemState()
+        if !systemAccelerationOff { tuning.openMouseSettings() }
     }
 
     /// Cleans up settings from earlier versions.
@@ -135,6 +139,13 @@ final class AppSettings: ObservableObject {
         if defaults.object(forKey: "scrollSpeed") != nil {
             tuning.restoreScrollAcceleration()
             defaults.removeObject(forKey: "scrollSpeed")
+        }
+        // Version 1.0.0 had its own "no acceleration" option (acceleration -1, at a fixed, slow speed).
+        // It was replaced by the macOS setting; drop it and give the pointer a normal speed again.
+        if defaults.object(forKey: Key.disableAcceleration) != nil {
+            let wasOn = defaults.bool(forKey: Key.disableAcceleration)
+            defaults.removeObject(forKey: Key.disableAcceleration)
+            if wasOn && pointerSpeed == nil { tuning.restorePointerSpeed() }
         }
         for key in ["mode", "highlightPointer", "highlightSize"] { defaults.removeObject(forKey: key) }
     }

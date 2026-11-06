@@ -48,8 +48,6 @@
 "Reset" = "Zurücksetzen";
 "Pointer speed" = "Zeigergeschwindigkeit";
 "System Settings goes up to %@; here you can go further." = "Die Systemeinstellungen gehen bis %@; hier kannst du darüber hinausgehen.";
-"Turn off pointer acceleration" = "Zeigerbeschleunigung deaktivieren";
-"Without acceleration, the pointer always moves the same distance for each centimeter you move the mouse, fast or slow. macOS then uses a fixed speed, so the speed slider is turned off." = "Ohne Beschleunigung legt der Zeiger für jeden Zentimeter Mausbewegung immer dieselbe Strecke zurück, egal ob schnell oder langsam. macOS verwendet dann eine feste Geschwindigkeit, daher ist der Geschwindigkeitsregler deaktiviert.";
 "Scrolling speed" = "Scrollgeschwindigkeit";
 "When you slide your finger on the mouse. ×1 is the macOS speed. Magic Mouse only." = "Beim Wischen mit dem Finger über die Maus. ×1 ist die macOS-Geschwindigkeit. Nur Magic Mouse.";
 "Scroll direction" = "Scrollrichtung";
@@ -76,3 +74,10 @@
 "Couldn’t check for updates." = "Updates konnten nicht gesucht werden.";
 "Magic Middle Click is up to date." = "Magic Middle Click ist auf dem neuesten Stand.";
 "Not checked yet." = "Noch nicht geprüft.";
+"Optimize" = "Optimieren";
+"Sets a fast pointer and classic scrolling, like a mouse on Windows. If macOS acceleration is on, it opens System Settings so you can turn it off." = "Stellt einen schnellen Zeiger und klassisches Scrollen ein, wie bei einer Maus unter Windows. Ist die macOS-Beschleunigung aktiv, werden die Systemeinstellungen geöffnet, damit du sie ausschalten kannst.";
+"Pointer acceleration (macOS)" = "Zeigerbeschleunigung (macOS)";
+"On" = "Ein";
+"Off" = "Aus";
+"Open Mouse Settings…" = "Maus-Einstellungen öffnen …";
+"Most people coming from Windows prefer it off: the pointer moves the same distance for the same hand movement. Turn it off in System Settings → Mouse → Advanced. The speed above keeps working." = "Die meisten, die von Windows kommen, schalten sie lieber aus: Der Zeiger legt für dieselbe Handbewegung immer dieselbe Strecke zurück. Schalte sie unter Systemeinstellungen → Maus → Erweitert aus. Die Geschwindigkeit oben funktioniert weiterhin.";

@@ -48,8 +48,6 @@
 "Reset" = "Réinitialiser";
 "Pointer speed" = "Vitesse du pointeur";
 "System Settings goes up to %@; here you can go further." = "Réglages Système va jusqu’à %@ ; ici, vous pouvez aller au-delà.";
-"Turn off pointer acceleration" = "Désactiver l’accélération du pointeur";
-"Without acceleration, the pointer always moves the same distance for each centimeter you move the mouse, fast or slow. macOS then uses a fixed speed, so the speed slider is turned off." = "Sans accélération, le pointeur parcourt toujours la même distance pour chaque centimètre de déplacement de la souris, que vous alliez vite ou lentement. macOS utilise alors une vitesse fixe : le réglage de vitesse est désactivé.";
 "Scrolling speed" = "Vitesse de défilement";
 "When you slide your finger on the mouse. ×1 is the macOS speed. Magic Mouse only." = "En faisant glisser le doigt sur la souris. ×1 correspond à la vitesse de macOS. Magic Mouse uniquement.";
 "Scroll direction" = "Sens du défilement";
@@ -76,3 +74,10 @@
 "Couldn’t check for updates." = "Impossible de rechercher des mises à jour.";
 "Magic Middle Click is up to date." = "Magic Middle Click est à jour.";
 "Not checked yet." = "Pas encore vérifié.";
+"Optimize" = "Optimiser";
+"Sets a fast pointer and classic scrolling, like a mouse on Windows. If macOS acceleration is on, it opens System Settings so you can turn it off." = "Règle un pointeur rapide et un défilement classique, comme une souris sous Windows. Si l’accélération de macOS est activée, ouvre Réglages Système pour que vous la désactiviez.";
+"Pointer acceleration (macOS)" = "Accélération du pointeur (macOS)";
+"On" = "Activée";
+"Off" = "Désactivée";
+"Open Mouse Settings…" = "Ouvrir les réglages de la souris…";
+"Most people coming from Windows prefer it off: the pointer moves the same distance for the same hand movement. Turn it off in System Settings → Mouse → Advanced. The speed above keeps working." = "La plupart des personnes venant de Windows la préfèrent désactivée : le pointeur parcourt la même distance pour le même mouvement de la main. Désactivez-la dans Réglages Système → Souris → Avancé. La vitesse ci-dessus continue de fonctionner.";

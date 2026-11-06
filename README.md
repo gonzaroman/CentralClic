@@ -6,7 +6,7 @@
 
 <p align="center">
   <strong>Add a middle click to your Apple Magic Mouse</strong>, choose how wide the left, middle and right click zones are,<br>
-  make the pointer faster than macOS allows, turn off mouse acceleration, and set scroll speed and direction just for the mouse.
+  make the pointer faster than macOS allows, get a Windows-like feel in one click, and set scroll speed and direction just for the mouse.
 </p>
 
 <p align="center">
@@ -39,8 +39,8 @@ The Apple Magic Mouse has no middle button, and macOS has no setting to add one.
 - **Middle click for the Magic Mouse** with three click zones: left, middle and right.
 - **Adjustable zones.** Drag the lines on the mouse drawing or use the sliders. The default is 36% / 28% / 36%, and the left zone never goes below 15%, so normal clicking always works.
 - **Live finger view.** See your fingers on the mouse and which zone each one would click.
-- **Pointer speed beyond the macOS maximum**, from 0 to 10. System Settings stops at 3.
-- **Turn off mouse acceleration**: the pointer moves the same distance for the same hand movement, at a fixed speed.
+- **Pointer speed beyond the macOS maximum**, from 0 to 20. System Settings stops at 3.
+- **Optimize button for a Windows-like feel.** One click sets a fast pointer and classic scrolling, and takes you to macOS's own "no acceleration" setting. That combination is the closest to how a mouse feels on Windows: direct and predictable, with the speed you choose.
 - **Magic Mouse scrolling speed**, from ×0.2 to ×5.
 - **Natural or classic scrolling for the mouse only.** Keep natural scrolling on the trackpad and classic scrolling on the Magic Mouse, or the other way round. macOS normally forces one setting for both.
 - **Update notifications** when a new version is released, plus *Check for Updates…* in the menu.
@@ -84,10 +84,13 @@ Install Magic Middle Click and press with one finger in the middle zone of the m
 It's tested with the original Magic Mouse. Magic Mouse 2 and the USB‑C Magic Mouse use the same multitouch system, so they should work too. If you try one, please [tell us how it went](https://github.com/gonzaroman/magic-middle-click/issues).
 
 **How do I turn off mouse acceleration on a Mac?**
-Open Magic Middle Click → *Movement* → **Turn off pointer acceleration**. The pointer then always moves the same distance for each centimeter you move the mouse, at a fixed speed.
+Turn off **Pointer acceleration** in System Settings → Mouse → Advanced. Magic Middle Click shows whether it's on or off and has a button to open that setting. Its speed slider keeps working with acceleration off, so you get linear movement at the speed you want. The **Optimize** button does it all in one go.
+
+**How do I make the Magic Mouse feel like a mouse on Windows?**
+Open Magic Middle Click → *Movement* and click **Optimize**. It sets a fast pointer and classic scrolling, and if macOS pointer acceleration is on, it opens System Settings so you can turn it off. Then fine-tune the speed slider to taste.
 
 **Can I make my mouse faster than the macOS maximum?**
-Yes. The *Pointer speed* slider goes up to 10; System Settings stops at 3.
+Yes. The *Pointer speed* slider goes up to 20; System Settings stops at 3.
 
 **Can I use natural scrolling on the trackpad and classic scrolling on the mouse?**
 Yes. Choose the Magic Mouse direction in *Movement → Scroll direction*. The trackpad keeps whatever macOS has.
@@ -112,7 +115,7 @@ No accounts, no analytics, no tracking. The only network request is a daily chec
 
 - Finger positions come from Apple's private `MultitouchSupport` framework, the same source used by tools like BetterTouchTool and MiddleClick.
 - A `CGEventTap` rewrites left/right clicks into the button of the zone under your finger. It also scales or reverses scroll events that start with a finger on the Magic Mouse.
-- Pointer speed and acceleration use the macOS HID event system (`HIDMouseAcceleration`, where -1 means no acceleration), so they apply to mice and not to the trackpad.
+- Pointer speed and acceleration use the macOS HID event system (`HIDMouseAcceleration`), so they apply to mice and not to the trackpad. Turning acceleration off is left to macOS, because it only accepts that setting from the system.
 
 ## Build from source
 

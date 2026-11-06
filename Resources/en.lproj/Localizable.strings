@@ -48,8 +48,6 @@
 "Reset" = "Reset";
 "Pointer speed" = "Pointer speed";
 "System Settings goes up to %@; here you can go further." = "System Settings goes up to %@; here you can go further.";
-"Turn off pointer acceleration" = "Turn off pointer acceleration";
-"Without acceleration, the pointer always moves the same distance for each centimeter you move the mouse, fast or slow. macOS then uses a fixed speed, so the speed slider is turned off." = "Without acceleration, the pointer always moves the same distance for each centimeter you move the mouse, fast or slow. macOS then uses a fixed speed, so the speed slider is turned off.";
 "Scrolling speed" = "Scrolling speed";
 "When you slide your finger on the mouse. ×1 is the macOS speed. Magic Mouse only." = "When you slide your finger on the mouse. ×1 is the macOS speed. Magic Mouse only.";
 "Scroll direction" = "Scroll direction";
@@ -76,3 +74,10 @@
 "Couldn’t check for updates." = "Couldn’t check for updates.";
 "Magic Middle Click is up to date." = "Magic Middle Click is up to date.";
 "Not checked yet." = "Not checked yet.";
+"Optimize" = "Optimize";
+"Sets a fast pointer and classic scrolling, like a mouse on Windows. If macOS acceleration is on, it opens System Settings so you can turn it off." = "Sets a fast pointer and classic scrolling, like a mouse on Windows. If macOS acceleration is on, it opens System Settings so you can turn it off.";
+"Pointer acceleration (macOS)" = "Pointer acceleration (macOS)";
+"On" = "On";
+"Off" = "Off";
+"Open Mouse Settings…" = "Open Mouse Settings…";
+"Most people coming from Windows prefer it off: the pointer moves the same distance for the same hand movement. Turn it off in System Settings → Mouse → Advanced. The speed above keeps working." = "Most people coming from Windows prefer it off: the pointer moves the same distance for the same hand movement. Turn it off in System Settings → Mouse → Advanced. The speed above keeps working.";

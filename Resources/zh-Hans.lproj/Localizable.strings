@@ -48,8 +48,6 @@
 "Reset" = "重置";
 "Pointer speed" = "指针速度";
 "System Settings goes up to %@; here you can go further." = "“系统设置”最高只到 %@；在这里可以设得更高。";
-"Turn off pointer acceleration" = "关闭指针加速";
-"Without acceleration, the pointer always moves the same distance for each centimeter you move the mouse, fast or slow. macOS then uses a fixed speed, so the speed slider is turned off." = "关闭加速后，无论移动快慢，鼠标每移动一厘米，指针都移动相同的距离。此时 macOS 使用固定速度，因此速度滑块将停用。";
 "Scrolling speed" = "滚动速度";
 "When you slide your finger on the mouse. ×1 is the macOS speed. Magic Mouse only." = "在鼠标上滑动手指时。×1 为 macOS 的速度。仅限 Magic Mouse。";
 "Scroll direction" = "滚动方向";
@@ -76,3 +74,10 @@
 "Couldn’t check for updates." = "无法检查更新。";
 "Magic Middle Click is up to date." = "Magic Middle Click 已是最新版本。";
 "Not checked yet." = "尚未检查。";
+"Optimize" = "优化";
+"Sets a fast pointer and classic scrolling, like a mouse on Windows. If macOS acceleration is on, it opens System Settings so you can turn it off." = "设置快速指针和经典滚动方式，就像 Windows 上的鼠标一样。如果 macOS 的加速处于打开状态，将打开“系统设置”以便你将其关闭。";
+"Pointer acceleration (macOS)" = "指针加速（macOS）";
+"On" = "打开";
+"Off" = "关闭";
+"Open Mouse Settings…" = "打开鼠标设置…";
+"Most people coming from Windows prefer it off: the pointer moves the same distance for the same hand movement. Turn it off in System Settings → Mouse → Advanced. The speed above keeps working." = "大多数从 Windows 转来的用户更喜欢关闭它：同样的手部动作，指针总是移动相同的距离。请在“系统设置”→“鼠标”→“高级”中关闭它。上面的速度仍然有效。";

@@ -48,8 +48,6 @@
 "Reset" = "Redefinir";
 "Pointer speed" = "Velocidade do cursor";
 "System Settings goes up to %@; here you can go further." = "Os Ajustes do Sistema vão até %@; aqui você pode ir além.";
-"Turn off pointer acceleration" = "Desativar a aceleração do cursor";
-"Without acceleration, the pointer always moves the same distance for each centimeter you move the mouse, fast or slow. macOS then uses a fixed speed, so the speed slider is turned off." = "Sem aceleração, o cursor percorre sempre a mesma distância para cada centímetro que você move o mouse, rápido ou devagar. O macOS passa a usar uma velocidade fixa, então o controle de velocidade fica desativado.";
 "Scrolling speed" = "Velocidade de rolagem";
 "When you slide your finger on the mouse. ×1 is the macOS speed. Magic Mouse only." = "Ao deslizar o dedo sobre o mouse. ×1 é a velocidade do macOS. Apenas o Magic Mouse.";
 "Scroll direction" = "Direção da rolagem";
@@ -76,3 +74,10 @@
 "Couldn’t check for updates." = "Não foi possível procurar atualizações.";
 "Magic Middle Click is up to date." = "O Magic Middle Click está atualizado.";
 "Not checked yet." = "Ainda não verificado.";
+"Optimize" = "Otimizar";
+"Sets a fast pointer and classic scrolling, like a mouse on Windows. If macOS acceleration is on, it opens System Settings so you can turn it off." = "Define um cursor rápido e rolagem clássica, como um mouse no Windows. Se a aceleração do macOS estiver ativada, abre os Ajustes do Sistema para você desativá-la.";
+"Pointer acceleration (macOS)" = "Aceleração do cursor (macOS)";
+"On" = "Ativada";
+"Off" = "Desativada";
+"Open Mouse Settings…" = "Abrir ajustes do mouse…";
+"Most people coming from Windows prefer it off: the pointer moves the same distance for the same hand movement. Turn it off in System Settings → Mouse → Advanced. The speed above keeps working." = "Quem vem do Windows geralmente prefere desativada: o cursor percorre a mesma distância para o mesmo movimento da mão. Desative-a em Ajustes do Sistema → Mouse → Avançado. A velocidade acima continua funcionando.";

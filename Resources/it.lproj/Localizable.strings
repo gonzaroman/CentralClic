@@ -48,8 +48,6 @@
 "Reset" = "Ripristina";
 "Pointer speed" = "Velocità del puntatore";
 "System Settings goes up to %@; here you can go further." = "Impostazioni di Sistema arriva fino a %@; qui puoi andare oltre.";
-"Turn off pointer acceleration" = "Disattiva l’accelerazione del puntatore";
-"Without acceleration, the pointer always moves the same distance for each centimeter you move the mouse, fast or slow. macOS then uses a fixed speed, so the speed slider is turned off." = "Senza accelerazione, il puntatore percorre sempre la stessa distanza per ogni centimetro di movimento del mouse, veloce o lento. macOS usa allora una velocità fissa, quindi il cursore della velocità viene disattivato.";
 "Scrolling speed" = "Velocità di scorrimento";
 "When you slide your finger on the mouse. ×1 is the macOS speed. Magic Mouse only." = "Quando fai scorrere il dito sul mouse. ×1 è la velocità di macOS. Solo Magic Mouse.";
 "Scroll direction" = "Direzione di scorrimento";
@@ -76,3 +74,10 @@
 "Couldn’t check for updates." = "Impossibile cercare aggiornamenti.";
 "Magic Middle Click is up to date." = "Magic Middle Click è aggiornato.";
 "Not checked yet." = "Non ancora controllato.";
+"Optimize" = "Ottimizza";
+"Sets a fast pointer and classic scrolling, like a mouse on Windows. If macOS acceleration is on, it opens System Settings so you can turn it off." = "Imposta un puntatore veloce e lo scorrimento classico, come un mouse su Windows. Se l’accelerazione di macOS è attiva, apre Impostazioni di Sistema per disattivarla.";
+"Pointer acceleration (macOS)" = "Accelerazione del puntatore (macOS)";
+"On" = "Attiva";
+"Off" = "Disattivata";
+"Open Mouse Settings…" = "Apri impostazioni del mouse…";
+"Most people coming from Windows prefer it off: the pointer moves the same distance for the same hand movement. Turn it off in System Settings → Mouse → Advanced. The speed above keeps working." = "Chi arriva da Windows di solito la preferisce disattivata: il puntatore percorre la stessa distanza per lo stesso movimento della mano. Disattivala in Impostazioni di Sistema → Mouse → Avanzate. La velocità sopra continua a funzionare.";

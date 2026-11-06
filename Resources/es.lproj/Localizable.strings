@@ -48,8 +48,6 @@
 "Reset" = "Restablecer";
 "Pointer speed" = "Velocidad del puntero";
 "System Settings goes up to %@; here you can go further." = "Ajustes del Sistema llega hasta %@; aquí puedes pasar de ahí.";
-"Turn off pointer acceleration" = "Desactivar la aceleración del puntero";
-"Without acceleration, the pointer always moves the same distance for each centimeter you move the mouse, fast or slow. macOS then uses a fixed speed, so the speed slider is turned off." = "Sin aceleración, el puntero recorre siempre la misma distancia por cada centímetro que mueves el ratón, vayas rápido o despacio. macOS usa entonces una velocidad fija, así que el control de velocidad se desactiva.";
 "Scrolling speed" = "Velocidad del desplazamiento";
 "When you slide your finger on the mouse. ×1 is the macOS speed. Magic Mouse only." = "Al deslizar el dedo sobre el ratón. ×1 es la velocidad de macOS. Solo el Magic Mouse.";
 "Scroll direction" = "Dirección del desplazamiento";
@@ -76,3 +74,10 @@
 "Couldn’t check for updates." = "No se han podido buscar actualizaciones.";
 "Magic Middle Click is up to date." = "Magic Middle Click está actualizada.";
 "Not checked yet." = "Aún no se ha comprobado.";
+"Optimize" = "Optimizar";
+"Sets a fast pointer and classic scrolling, like a mouse on Windows. If macOS acceleration is on, it opens System Settings so you can turn it off." = "Pone un puntero rápido y desplazamiento clásico, como un ratón en Windows. Si la aceleración de macOS está activada, abre Ajustes del Sistema para que la desactives.";
+"Pointer acceleration (macOS)" = "Aceleración del puntero (macOS)";
+"On" = "Activada";
+"Off" = "Desactivada";
+"Open Mouse Settings…" = "Abrir ajustes del ratón…";
+"Most people coming from Windows prefer it off: the pointer moves the same distance for the same hand movement. Turn it off in System Settings → Mouse → Advanced. The speed above keeps working." = "Casi todos los que vienen de Windows la prefieren desactivada: el puntero recorre la misma distancia por el mismo movimiento de la mano. Desactívala en Ajustes del Sistema → Ratón → Avanzado. La velocidad de arriba sigue funcionando.";

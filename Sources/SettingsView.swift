@@ -252,22 +252,42 @@ private struct MotionTab: View {
     var body: some View {
         let systemNatural = tuning.systemNaturalScroll
         VStack(alignment: .leading, spacing: 22) {
+            HStack(alignment: .center, spacing: 14) {
+                Button { settings.optimize() } label: {
+                    Label(L("Optimize"), systemImage: "wand.and.stars")
+                        .padding(.horizontal, 6)
+                }
+                .buttonStyle(.borderedProminent)
+                .controlSize(.large)
+                Text(L("Sets a fast pointer and classic scrolling, like a mouse on Windows. If macOS acceleration is on, it opens System Settings so you can turn it off."))
+                    .font(.caption).foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+
             SpeedRow(title: L("Pointer speed"),
                      value: settings.pointerSpeed,
                      systemValue: tuning.systemPointerSpeed,
                      range: MouseTuning.pointerRange,
                      note: L("System Settings goes up to %@; here you can go further.", SpeedRow.format(MouseTuning.systemPointerMax)),
                      set: { settings.pointerSpeed = $0 })
-                .disabled(settings.disableAcceleration)
-                .opacity(settings.disableAcceleration ? 0.45 : 1)
 
-            VStack(alignment: .leading, spacing: 4) {
-                Toggle(L("Turn off pointer acceleration"), isOn: $settings.disableAcceleration)
-                Text(L("Without acceleration, the pointer always moves the same distance for each centimeter you move the mouse, fast or slow. macOS then uses a fixed speed, so the speed slider is turned off."))
+            VStack(alignment: .leading, spacing: 6) {
+                HStack {
+                    Text(L("Pointer acceleration (macOS)")).font(.headline)
+                    Spacer()
+                    HStack(spacing: 6) {
+                        Circle()
+                            .fill(settings.systemAccelerationOff ? Color.green : Color.orange)
+                            .frame(width: 8, height: 8)
+                        Text(settings.systemAccelerationOff ? L("Off") : L("On"))
+                    }
+                    Button(L("Open Mouse Settings…")) { MouseTuning.shared.openMouseSettings() }
+                        .controlSize(.small)
+                }
+                Text(L("Most people coming from Windows prefer it off: the pointer moves the same distance for the same hand movement. Turn it off in System Settings → Mouse → Advanced. The speed above keeps working."))
                     .font(.caption).foregroundStyle(.secondary)
                     .fixedSize(horizontal: false, vertical: true)
             }
-            .padding(.top, -10)
 
             SpeedRow(title: L("Scrolling speed"),
                      value: settings.scrollMultiplier,

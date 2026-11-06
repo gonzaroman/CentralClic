@@ -7,6 +7,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSWind
     private var settingsWindow: NSWindow?
     private var permissionTimer: Timer?
     private var sigterm: DispatchSourceSignal?
+    private var systemStateTimer: Timer?
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
@@ -233,6 +234,12 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSWind
             settingsWindow = window
         }
         GestureEngine.shared.setLive(true)
+        // While the window is open, follow changes made in System Settings (pointer acceleration).
+        AppSettings.shared.refreshSystemState()
+        systemStateTimer?.invalidate()
+        systemStateTimer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: true) { _ in
+            AppSettings.shared.refreshSystemState()
+        }
         NSApp.activate(ignoringOtherApps: true)
         settingsWindow?.makeKeyAndOrderFront(nil)
     }
@@ -240,5 +247,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSWind
     func windowWillClose(_ notification: Notification) {
         GestureEngine.shared.setLive(false)
         LiveTouches.shared.points = []
+        systemStateTimer?.invalidate()
+        systemStateTimer = nil
     }
 }
