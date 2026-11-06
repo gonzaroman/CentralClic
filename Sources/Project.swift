@@ -3,12 +3,12 @@ import AppKit
 /// Where the project lives, and the gentle ways to support it.
 enum Project {
     /// GitHub repository ("owner/name"). Used for releases (updates), stars and sharing.
-    static let repository = "gonzaroman/CentralClic"
+    static let repository = "gonzaroman/magic-middle-click"
     static let url = URL(string: "https://github.com/\(repository)")!
     static let latestReleaseAPI = URL(string: "https://api.github.com/repos/\(repository)/releases/latest")!
 
     static var shareMessage: String {
-        L("CentralClic adds middle click to the Magic Mouse, with adjustable zones and speed. Free on GitHub:")
+        L("Magic Middle Click adds middle click to the Magic Mouse, with adjustable zones and speed. Free on GitHub:")
     }
 
     static func openRepository() { NSWorkspace.shared.open(url) }

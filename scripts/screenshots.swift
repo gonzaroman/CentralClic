@@ -40,7 +40,7 @@ func render(_ tab: SettingsTab, dark: Bool, to name: String) throws {
     let host = NSHostingView(rootView: SettingsView(initialTab: tab))
     let window = ActiveLookingWindow(contentRect: NSRect(origin: .zero, size: host.fittingSize),
                           styleMask: [.titled, .closable, .miniaturizable], backing: .buffered, defer: false)
-    window.title = "CentralClic"
+    window.title = "Magic Middle Click"
     window.appearance = NSAppearance(named: dark ? .darkAqua : .aqua)
     window.contentView = host
     window.setFrameOrigin(NSPoint(x: -20000, y: -20000)) // off screen

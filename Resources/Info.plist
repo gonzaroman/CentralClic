@@ -18,17 +18,17 @@
 		<string>ko</string>
 	</array>
 	<key>CFBundleDisplayName</key>
-	<string>CentralClic</string>
+	<string>Magic Middle Click</string>
 	<key>CFBundleExecutable</key>
-	<string>CentralClic</string>
+	<string>MagicMiddleClick</string>
 	<key>CFBundleIconFile</key>
 	<string>AppIcon</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.gonzaroman.centralclic</string>
+	<string>com.gonzaroman.magicmiddleclick</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>CentralClic</string>
+	<string>Magic Middle Click</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>

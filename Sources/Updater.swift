@@ -76,7 +76,7 @@ final class Updater: ObservableObject {
         checking = true
         var request = URLRequest(url: Project.latestReleaseAPI, timeoutInterval: 15)
         request.setValue("application/vnd.github+json", forHTTPHeaderField: "Accept")
-        request.setValue("CentralClic/\(currentVersion)", forHTTPHeaderField: "User-Agent")
+        request.setValue("MagicMiddleClick/\(currentVersion)", forHTTPHeaderField: "User-Agent")
         URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
             let status = (response as? HTTPURLResponse)?.statusCode ?? 0
             DispatchQueue.main.async {

@@ -37,12 +37,12 @@ func text(_ s: String, size: CGFloat, weight: NSFont.Weight, alpha: CGFloat = 1,
     ]
     NSAttributedString(string: s, attributes: attributes).draw(at: NSPoint(x: left, y: y))
 }
-text("CentralClic", size: 78, weight: .heavy, at: 300)
-text("Middle click for the", size: 38, weight: .semibold, alpha: 0.95, at: 248)
-text("Apple Magic Mouse", size: 38, weight: .semibold, alpha: 0.95, at: 200)
+text("Magic Middle Click", size: 60, weight: .heavy, at: 304)
+text("The missing middle button", size: 36, weight: .semibold, alpha: 0.95, at: 248)
+text("for the Apple Magic Mouse", size: 36, weight: .semibold, alpha: 0.95, at: 200)
 text("Adjustable click zones · Pointer speed", size: 24, weight: .regular, alpha: 0.85, at: 140)
 text("No acceleration · Scroll speed & direction", size: 24, weight: .regular, alpha: 0.85, at: 108)
-text("Free · macOS 13+ · github.com/gonzaroman/CentralClic", size: 20, weight: .medium, alpha: 0.75, at: 56)
+text("Free · macOS 13+ · github.com/gonzaroman/magic-middle-click", size: 20, weight: .medium, alpha: 0.75, at: 56)
 
 NSGraphicsContext.restoreGraphicsState()
 try rep.representation(using: .png, properties: [:])!.write(to: docs.appendingPathComponent("social-preview.png"))

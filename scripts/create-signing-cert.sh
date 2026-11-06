@@ -1,11 +1,11 @@
 #!/bin/bash
-# Creates a self-signed "CentralClic Local" code signing certificate in the login keychain.
-# With it, every build of CentralClic keeps the same identity, so macOS doesn't forget the Accessibility permission.
-# Keep a backup (Keychain Access → My Certificates → "CentralClic Local" → Export): releases signed with it let
+# Creates a self-signed "Magic Middle Click Local" code signing certificate in the login keychain.
+# With it, every build of Magic Middle Click keeps the same identity, so macOS doesn't forget the Accessibility permission.
+# Keep a backup (Keychain Access → My Certificates → "Magic Middle Click Local" → Export): releases signed with it let
 # users keep the permission when they update.
-# To delete it: Keychain Access → login → My Certificates → "CentralClic Local" → Delete.
+# To delete it: Keychain Access → login → My Certificates → "Magic Middle Click Local" → Delete.
 set -euo pipefail
-NAME="CentralClic Local"
+NAME="Magic Middle Click Local"
 if security find-identity -p codesigning | grep -q "$NAME"; then
   echo "The \"${NAME}\" certificate already exists."
   exit 0
@@ -29,6 +29,6 @@ CNF
   -keyout "$TMP/key.pem" -out "$TMP/cert.pem" 2>/dev/null
 /usr/bin/openssl pkcs12 -export -inkey "$TMP/key.pem" -in "$TMP/cert.pem" -name "$NAME" \
   -keypbe PBE-SHA1-3DES -certpbe PBE-SHA1-3DES -macalg sha1 \
-  -out "$TMP/id.p12" -passout pass:centralclic
-security import "$TMP/id.p12" -k ~/Library/Keychains/login.keychain-db -P centralclic -T /usr/bin/codesign
+  -out "$TMP/id.p12" -passout pass:magicmiddleclick
+security import "$TMP/id.p12" -k ~/Library/Keychains/login.keychain-db -P magicmiddleclick -T /usr/bin/codesign
 echo "✓ Created the \"${NAME}\" certificate. Run ./build.sh again."

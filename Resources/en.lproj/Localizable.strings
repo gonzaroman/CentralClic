@@ -1,4 +1,4 @@
-/* CentralClic — en. The key is the English text used in the code. */
+/* Magic Middle Click — en. The key is the English text used in the code. */
 
 "This Mac can’t read the Magic Mouse" = "This Mac can’t read the Magic Mouse";
 "The macOS MultitouchSupport component wasn’t found." = "The macOS MultitouchSupport component wasn’t found.";
@@ -11,18 +11,18 @@
 "Open at Login" = "Open at Login";
 "Check for Updates…" = "Check for Updates…";
 "Star on GitHub…" = "Star on GitHub…";
-"Share CentralClic…" = "Share CentralClic…";
-"Quit CentralClic" = "Quit CentralClic";
+"Share Magic Middle Click…" = "Share Magic Middle Click…";
+"Quit Magic Middle Click" = "Quit Magic Middle Click";
 "You’re up to date" = "You’re up to date";
-"CentralClic %@ is the latest version." = "CentralClic %@ is the latest version.";
+"Magic Middle Click %@ is the latest version." = "Magic Middle Click %@ is the latest version.";
 "OK" = "OK";
 "Couldn’t check for updates" = "Couldn’t check for updates";
 "Check your internet connection and try again." = "Check your internet connection and try again.";
-"A new version of CentralClic is available" = "A new version of CentralClic is available";
+"A new version of Magic Middle Click is available" = "A new version of Magic Middle Click is available";
 "Version %@ is available (you have %@)." = "Version %@ is available (you have %@).";
 "Download" = "Download";
 "Later" = "Later";
-"CentralClic has made %ld middle clicks for you!" = "CentralClic has made %ld middle clicks for you!";
+"Magic Middle Click has made %ld middle clicks for you!" = "Magic Middle Click has made %ld middle clicks for you!";
 "If it’s useful to you, a star on GitHub or sharing it with a friend helps a lot. This message won’t appear again." = "If it’s useful to you, a star on GitHub or sharing it with a friend helps a lot. This message won’t appear again.";
 "Star on GitHub" = "Star on GitHub";
 "Share…" = "Share…";
@@ -33,9 +33,9 @@
 "Left zone letter" = "L";
 "Middle zone letter" = "M";
 "Right zone letter" = "R";
-"CentralClic adds middle click to the Magic Mouse, with adjustable zones and speed. Free on GitHub:" = "CentralClic adds middle click to the Magic Mouse, with adjustable zones and speed. Free on GitHub:";
+"Magic Middle Click adds middle click to the Magic Mouse, with adjustable zones and speed. Free on GitHub:" = "Magic Middle Click adds middle click to the Magic Mouse, with adjustable zones and speed. Free on GitHub:";
 "Accessibility permission is missing" = "Accessibility permission is missing";
-"Without it, zone clicks and scrolling don’t work. Turn it on for CentralClic in System Settings → Privacy & Security → Accessibility. If it already appears on, remove it with “–” and add it again: after an update, macOS may see the app as a different one." = "Without it, zone clicks and scrolling don’t work. Turn it on for CentralClic in System Settings → Privacy & Security → Accessibility. If it already appears on, remove it with “–” and add it again: after an update, macOS may see the app as a different one.";
+"Without it, zone clicks and scrolling don’t work. Turn it on for Magic Middle Click in System Settings → Privacy & Security → Accessibility. If it already appears on, remove it with “–” and add it again: after an update, macOS may see the app as a different one." = "Without it, zone clicks and scrolling don’t work. Turn it on for Magic Middle Click in System Settings → Privacy & Security → Accessibility. If it already appears on, remove it with “–” and add it again: after an update, macOS may see the app as a different one.";
 "Open Accessibility Settings" = "Open Accessibility Settings";
 "Clicks" = "Clicks";
 "Movement" = "Movement";
@@ -49,7 +49,7 @@
 "Pointer speed" = "Pointer speed";
 "System Settings goes up to %@; here you can go further." = "System Settings goes up to %@; here you can go further.";
 "Turn off pointer acceleration" = "Turn off pointer acceleration";
-"Without acceleration, the pointer always moves the same distance for each centimeter you move the mouse, fast or slow. The speed above still applies." = "Without acceleration, the pointer always moves the same distance for each centimeter you move the mouse, fast or slow. The speed above still applies.";
+"Without acceleration, the pointer always moves the same distance for each centimeter you move the mouse, fast or slow. macOS then uses a fixed speed, so the speed slider is turned off." = "Without acceleration, the pointer always moves the same distance for each centimeter you move the mouse, fast or slow. macOS then uses a fixed speed, so the speed slider is turned off.";
 "Scrolling speed" = "Scrolling speed";
 "When you slide your finger on the mouse. ×1 is the macOS speed. Magic Mouse only." = "When you slide your finger on the mouse. ×1 is the macOS speed. Magic Mouse only.";
 "Scroll direction" = "Scroll direction";
@@ -59,7 +59,7 @@
 "Natural: content follows your finger, like on iPhone. Classic: like a mouse wheel. Only the Magic Mouse changes; the trackpad keeps the macOS setting (currently %@)." = "Natural: content follows your finger, like on iPhone. Classic: like a mouse wheel. Only the Magic Mouse changes; the trackpad keeps the macOS setting (currently %@).";
 "natural" = "natural";
 "classic" = "classic";
-"Pointer speed affects mice, not the trackpad. Scrolling and its direction need the Accessibility permission. If you turn CentralClic off or quit it, the macOS settings come back." = "Pointer speed affects mice, not the trackpad. Scrolling and its direction need the Accessibility permission. If you turn CentralClic off or quit it, the macOS settings come back.";
+"Pointer speed affects mice, not the trackpad. Scrolling and its direction need the Accessibility permission. If you turn Magic Middle Click off or quit it, the macOS settings come back." = "Pointer speed affects mice, not the trackpad. Scrolling and its direction need the Accessibility permission. If you turn Magic Middle Click off or quit it, the macOS settings come back.";
 "macOS (%@)" = "macOS (%@)";
 "Use macOS Setting" = "Use macOS Setting";
 "Version %@" = "Version %@";
@@ -68,11 +68,11 @@
 "Check Now" = "Check Now";
 "Download version %@" = "Download version %@";
 "Check for updates automatically" = "Check for updates automatically";
-"Once a day, CentralClic asks GitHub whether there is a new version. No personal data is sent." = "Once a day, CentralClic asks GitHub whether there is a new version. No personal data is sent.";
-"Do you like CentralClic? A star on GitHub or sharing it with a friend helps a lot." = "Do you like CentralClic? A star on GitHub or sharing it with a friend helps a lot.";
+"Once a day, Magic Middle Click asks GitHub whether there is a new version. No personal data is sent." = "Once a day, Magic Middle Click asks GitHub whether there is a new version. No personal data is sent.";
+"Do you like Magic Middle Click? A star on GitHub or sharing it with a friend helps a lot." = "Do you like Magic Middle Click? A star on GitHub or sharing it with a friend helps a lot.";
 "Share" = "Share";
 "Checking…" = "Checking…";
 "Version %@ is available." = "Version %@ is available.";
 "Couldn’t check for updates." = "Couldn’t check for updates.";
-"CentralClic is up to date." = "CentralClic is up to date.";
+"Magic Middle Click is up to date." = "Magic Middle Click is up to date.";
 "Not checked yet." = "Not checked yet.";

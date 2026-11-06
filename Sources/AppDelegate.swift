@@ -9,8 +9,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSWind
     private var sigterm: DispatchSourceSignal?
 
     func applicationDidFinishLaunching(_ notification: Notification) {
+        LegacySettings.migrateIfNeeded()
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
-        let image = NSImage(systemSymbolName: "computermouse", accessibilityDescription: "CentralClic")
+        let image = NSImage(systemSymbolName: "computermouse", accessibilityDescription: "Magic Middle Click")
         image?.isTemplate = true
         statusItem.button?.image = image
         let menu = NSMenu()
@@ -129,9 +130,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSWind
         menu.addItem(.separator())
 
         menu.addItem(item(L("Star on GitHub…"), #selector(starOnGitHub)))
-        menu.addItem(item(L("Share CentralClic…"), #selector(shareApp)))
+        menu.addItem(item(L("Share Magic Middle Click…"), #selector(shareApp)))
         menu.addItem(.separator())
-        menu.addItem(item(L("Quit CentralClic"), #selector(quit), key: "q"))
+        menu.addItem(item(L("Quit Magic Middle Click"), #selector(quit), key: "q"))
     }
 
     private func item(_ title: String, _ action: Selector, key: String = "") -> NSMenuItem {
@@ -161,7 +162,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSWind
             case .upToDate:
                 let alert = NSAlert()
                 alert.messageText = L("You’re up to date")
-                alert.informativeText = L("CentralClic %@ is the latest version.", Updater.shared.currentVersion)
+                alert.informativeText = L("Magic Middle Click %@ is the latest version.", Updater.shared.currentVersion)
                 alert.addButton(withTitle: L("OK"))
                 self?.runFrontmost(alert)
             case .failed:
@@ -179,7 +180,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSWind
 
     private func showUpdateAlert(_ release: Updater.Release) {
         let alert = NSAlert()
-        alert.messageText = L("A new version of CentralClic is available")
+        alert.messageText = L("A new version of Magic Middle Click is available")
         alert.informativeText = L("Version %@ is available (you have %@).", release.version, Updater.shared.currentVersion)
         alert.addButton(withTitle: L("Download"))
         alert.addButton(withTitle: L("Later"))
@@ -199,7 +200,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSWind
     /// Shown only once, after the app has made `Engagement.milestone` middle clicks.
     private func showSupportAlert() {
         let alert = NSAlert()
-        alert.messageText = L("CentralClic has made %ld middle clicks for you!", Engagement.milestone)
+        alert.messageText = L("Magic Middle Click has made %ld middle clicks for you!", Engagement.milestone)
         alert.informativeText = L("If it’s useful to you, a star on GitHub or sharing it with a friend helps a lot. This message won’t appear again.")
         alert.addButton(withTitle: L("Star on GitHub"))
         alert.addButton(withTitle: L("Share…"))
@@ -224,7 +225,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSWind
         if settingsWindow == nil {
             let view = SettingsView(openAccessibility: { [weak self] in self?.openAccessibilitySettings() })
             let window = NSWindow(contentViewController: NSHostingController(rootView: view))
-            window.title = "CentralClic"
+            window.title = "Magic Middle Click"
             window.styleMask = [.titled, .closable, .miniaturizable]
             window.isReleasedWhenClosed = false
             window.delegate = self

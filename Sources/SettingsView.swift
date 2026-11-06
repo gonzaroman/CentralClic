@@ -42,7 +42,7 @@ struct SettingsView: View {
                     Image(systemName: "exclamationmark.triangle.fill").foregroundStyle(.yellow)
                     VStack(alignment: .leading, spacing: 6) {
                         Text(L("Accessibility permission is missing")).bold()
-                        Text(L("Without it, zone clicks and scrolling don’t work. Turn it on for CentralClic in System Settings → Privacy & Security → Accessibility. If it already appears on, remove it with “–” and add it again: after an update, macOS may see the app as a different one."))
+                        Text(L("Without it, zone clicks and scrolling don’t work. Turn it on for Magic Middle Click in System Settings → Privacy & Security → Accessibility. If it already appears on, remove it with “–” and add it again: after an update, macOS may see the app as a different one."))
                             .font(.callout).foregroundStyle(.secondary)
                             .fixedSize(horizontal: false, vertical: true)
                         Button(L("Open Accessibility Settings"), action: openAccessibility)
@@ -258,12 +258,12 @@ private struct MotionTab: View {
                      range: MouseTuning.pointerRange,
                      note: L("System Settings goes up to %@; here you can go further.", SpeedRow.format(MouseTuning.systemPointerMax)),
                      set: { settings.pointerSpeed = $0 })
+                .disabled(settings.disableAcceleration)
+                .opacity(settings.disableAcceleration ? 0.45 : 1)
 
             VStack(alignment: .leading, spacing: 4) {
-                Toggle(L("Turn off pointer acceleration"), isOn: Binding(
-                    get: { settings.disableAcceleration ?? tuning.systemLinear },
-                    set: { settings.disableAcceleration = $0 }))
-                Text(L("Without acceleration, the pointer always moves the same distance for each centimeter you move the mouse, fast or slow. The speed above still applies."))
+                Toggle(L("Turn off pointer acceleration"), isOn: $settings.disableAcceleration)
+                Text(L("Without acceleration, the pointer always moves the same distance for each centimeter you move the mouse, fast or slow. macOS then uses a fixed speed, so the speed slider is turned off."))
                     .font(.caption).foregroundStyle(.secondary)
                     .fixedSize(horizontal: false, vertical: true)
             }
@@ -294,7 +294,7 @@ private struct MotionTab: View {
                     .fixedSize(horizontal: false, vertical: true)
             }
 
-            Text(L("Pointer speed affects mice, not the trackpad. Scrolling and its direction need the Accessibility permission. If you turn CentralClic off or quit it, the macOS settings come back."))
+            Text(L("Pointer speed affects mice, not the trackpad. Scrolling and its direction need the Accessibility permission. If you turn Magic Middle Click off or quit it, the macOS settings come back."))
                 .font(.caption).foregroundStyle(.secondary)
                 .fixedSize(horizontal: false, vertical: true)
             Spacer(minLength: 0)
@@ -354,7 +354,7 @@ private struct AboutTab: View {
                 .resizable()
                 .frame(width: 72, height: 72)
             VStack(spacing: 4) {
-                Text("CentralClic").font(.title2.bold())
+                Text("Magic Middle Click").font(.title2.bold())
                 Text(L("Version %@", updater.currentVersion)).foregroundStyle(.secondary)
                 Text(L("Middle click, zones and speed for the Magic Mouse.")).font(.callout)
             }
@@ -372,7 +372,7 @@ private struct AboutTab: View {
                             .buttonStyle(.borderedProminent)
                     }
                     Toggle(L("Check for updates automatically"), isOn: $updater.automaticChecks)
-                    Text(L("Once a day, CentralClic asks GitHub whether there is a new version. No personal data is sent."))
+                    Text(L("Once a day, Magic Middle Click asks GitHub whether there is a new version. No personal data is sent."))
                         .font(.caption).foregroundStyle(.secondary)
                         .fixedSize(horizontal: false, vertical: true)
                 }
@@ -381,7 +381,7 @@ private struct AboutTab: View {
             }
 
             VStack(spacing: 10) {
-                Text(L("Do you like CentralClic? A star on GitHub or sharing it with a friend helps a lot."))
+                Text(L("Do you like Magic Middle Click? A star on GitHub or sharing it with a friend helps a lot."))
                     .font(.callout)
                     .multilineTextAlignment(.center)
                     .fixedSize(horizontal: false, vertical: true)
@@ -389,7 +389,7 @@ private struct AboutTab: View {
                     Button { Project.openRepository() } label: {
                         Label(L("Star on GitHub"), systemImage: "star.fill")
                     }
-                    ShareLink(item: Project.url, subject: Text("CentralClic"), message: Text(Project.shareMessage)) {
+                    ShareLink(item: Project.url, subject: Text("Magic Middle Click"), message: Text(Project.shareMessage)) {
                         Label(L("Share"), systemImage: "square.and.arrow.up")
                     }
                 }
@@ -403,7 +403,7 @@ private struct AboutTab: View {
         if updater.checking { return L("Checking…") }
         if let release = updater.available { return L("Version %@ is available.", release.version) }
         if updater.failed { return L("Couldn’t check for updates.") }
-        if updater.lastCheck != nil { return L("CentralClic is up to date.") }
+        if updater.lastCheck != nil { return L("Magic Middle Click is up to date.") }
         return L("Not checked yet.")
     }
 }

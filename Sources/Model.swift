@@ -1,7 +1,7 @@
 import AppKit
 import os
 
-let appLog = Logger(subsystem: "com.gonzaroman.centralclic", category: "app")
+let appLog = Logger(subsystem: "com.gonzaroman.magicmiddleclick", category: "app")
 
 /// Mouse button. The raw value is the CGEvent button number.
 enum MouseButton: Int {

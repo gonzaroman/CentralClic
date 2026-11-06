@@ -47,11 +47,12 @@ final class AppSettings: ObservableObject {
         }
     }
 
-    /// Turn off pointer acceleration (linear tracking), or nil to follow macOS.
-    @Published var disableAcceleration: Bool? {
+    /// Turn off pointer acceleration. The pointer then moves at a fixed speed, so `pointerSpeed` doesn't apply.
+    @Published var disableAcceleration: Bool {
         didSet {
-            if let disableAcceleration { defaults.set(disableAcceleration, forKey: Key.disableAcceleration) } else { defaults.removeObject(forKey: Key.disableAcceleration) }
-            if disableAcceleration == nil && oldValue != nil { tuning.restoreLinear() }
+            defaults.set(disableAcceleration, forKey: Key.disableAcceleration)
+            // Turning acceleration back on without a custom speed: go back to the macOS speed.
+            if oldValue && !disableAcceleration && pointerSpeed == nil { tuning.restorePointerSpeed() }
             applyMotion()
         }
     }
@@ -79,7 +80,7 @@ final class AppSettings: ObservableObject {
         pointerSpeed = (defaults.object(forKey: Key.pointerSpeed) as? Double).map { min(max($0, MouseTuning.pointerRange.lowerBound), MouseTuning.pointerRange.upperBound) }
         scrollMultiplier = (defaults.object(forKey: Key.scrollMultiplier) as? Double).map { min(max($0, MouseTuning.scrollMultiplierRange.lowerBound), MouseTuning.scrollMultiplierRange.upperBound) }
         naturalScroll = defaults.object(forKey: Key.naturalScroll) as? Bool
-        disableAcceleration = defaults.object(forKey: Key.disableAcceleration) as? Bool
+        disableAcceleration = defaults.bool(forKey: Key.disableAcceleration)
         migrateOldSettings()
         push()
     }
@@ -109,9 +110,12 @@ final class AppSettings: ObservableObject {
             EventTap.shared.scrollMultiplier = 1
             return
         }
-        // Mode first (with or without acceleration), then the speed, which applies in both.
-        if let disableAcceleration { tuning.setLinear(disableAcceleration) }
-        if let pointerSpeed { tuning.setPointerSpeed(pointerSpeed) }
+        // Without acceleration the speed is fixed by macOS, so a custom speed only applies with acceleration on.
+        if disableAcceleration {
+            tuning.setAccelerationOff()
+        } else if let pointerSpeed {
+            tuning.setPointerSpeed(pointerSpeed)
+        }
         EventTap.shared.scrollMultiplier = scrollMultiplier ?? 1
         let wantNatural = naturalScroll ?? tuning.systemNaturalScroll
         EventTap.shared.invertMouseScroll = wantNatural != tuning.systemNaturalScroll
@@ -120,8 +124,7 @@ final class AppSettings: ObservableObject {
 
     /// Puts the macOS values back (when the app is turned off or quits).
     func restoreSystemMotion() {
-        if disableAcceleration != nil { tuning.restoreLinear() }
-        if pointerSpeed != nil { tuning.restorePointerSpeed() }
+        if disableAcceleration || pointerSpeed != nil { tuning.restorePointerSpeed() }
         EventTap.shared.invertMouseScroll = false
         EventTap.shared.scrollMultiplier = 1
     }
@@ -181,4 +184,29 @@ final class LiveTouches: ObservableObject {
     @Published var lastClick: MouseButton?
     @Published var connectedMice = 0
     @Published var accessibilityGranted = false
+}
+
+/// Before it was renamed, the app was called CentralClic, with the bundle id com.gonzaroman.centralclic.
+/// On the first launch under the new id, copy those settings so nobody loses their zones and speeds.
+enum LegacySettings {
+    private static let oldDomain = "com.gonzaroman.centralclic"
+    private static let keys = ["enabled", "zoneLeft", "zoneCenter", "zoneRight", "pointerSpeed", "scrollMultiplier",
+                               "naturalScroll", "disableAcceleration", "launchedBefore", "middleClickCount",
+                               "askedForSupport", "checkForUpdates", "lastUpdateCheck", "notifiedUpdateVersion"]
+
+    /// Must run before AppSettings, Updater or Engagement read their values.
+    static func migrateIfNeeded() {
+        let defaults = UserDefaults.standard
+        guard defaults.object(forKey: "migratedFromCentralClic") == nil else { return }
+        defaults.set(true, forKey: "migratedFromCentralClic")
+        guard let old = UserDefaults(suiteName: oldDomain) else { return }
+        var copied = 0
+        for key in keys {
+            if let value = old.object(forKey: key), defaults.object(forKey: key) == nil {
+                defaults.set(value, forKey: key)
+                copied += 1
+            }
+        }
+        if copied > 0 { appLog.notice("Copied \(copied, privacy: .public) settings from CentralClic") }
+    }
 }

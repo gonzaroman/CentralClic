@@ -1,7 +1,7 @@
 // Types from the private MultitouchSupport framework (macOS).
 // The memory layout must match the framework exactly, which is why they are declared in C rather than Swift.
-#ifndef CENTRALCLIC_BRIDGE_H
-#define CENTRALCLIC_BRIDGE_H
+#ifndef MAGICMIDDLECLICK_BRIDGE_H
+#define MAGICMIDDLECLICK_BRIDGE_H
 
 typedef struct { float x, y; } MTPoint;
 typedef struct { MTPoint position; MTPoint velocity; } MTReadout;

@@ -1,4 +1,4 @@
-/* CentralClic — de. The key is the English text used in the code. */
+/* Magic Middle Click — de. The key is the English text used in the code. */
 
 "This Mac can’t read the Magic Mouse" = "Dieser Mac kann die Magic Mouse nicht auslesen";
 "The macOS MultitouchSupport component wasn’t found." = "Die macOS-Komponente MultitouchSupport wurde nicht gefunden.";
@@ -11,18 +11,18 @@
 "Open at Login" = "Beim Anmelden öffnen";
 "Check for Updates…" = "Nach Updates suchen …";
 "Star on GitHub…" = "Auf GitHub einen Stern geben …";
-"Share CentralClic…" = "CentralClic teilen …";
-"Quit CentralClic" = "CentralClic beenden";
+"Share Magic Middle Click…" = "Magic Middle Click teilen …";
+"Quit Magic Middle Click" = "Magic Middle Click beenden";
 "You’re up to date" = "Du bist auf dem neuesten Stand";
-"CentralClic %@ is the latest version." = "CentralClic %@ ist die neueste Version.";
+"Magic Middle Click %@ is the latest version." = "Magic Middle Click %@ ist die neueste Version.";
 "OK" = "OK";
 "Couldn’t check for updates" = "Updates konnten nicht gesucht werden";
 "Check your internet connection and try again." = "Prüfe deine Internetverbindung und versuche es erneut.";
-"A new version of CentralClic is available" = "Eine neue Version von CentralClic ist verfügbar";
+"A new version of Magic Middle Click is available" = "Eine neue Version von Magic Middle Click ist verfügbar";
 "Version %@ is available (you have %@)." = "Version %@ ist verfügbar (du hast %@).";
 "Download" = "Laden";
 "Later" = "Später";
-"CentralClic has made %ld middle clicks for you!" = "CentralClic hat schon %ld Mittelklicks für dich gemacht!";
+"Magic Middle Click has made %ld middle clicks for you!" = "Magic Middle Click hat schon %ld Mittelklicks für dich gemacht!";
 "If it’s useful to you, a star on GitHub or sharing it with a friend helps a lot. This message won’t appear again." = "Wenn es dir nützt, hilft ein Stern auf GitHub oder das Teilen mit Freunden sehr. Diese Meldung erscheint nicht wieder.";
 "Star on GitHub" = "Auf GitHub einen Stern geben";
 "Share…" = "Teilen …";
@@ -33,9 +33,9 @@
 "Left zone letter" = "L";
 "Middle zone letter" = "M";
 "Right zone letter" = "R";
-"CentralClic adds middle click to the Magic Mouse, with adjustable zones and speed. Free on GitHub:" = "CentralClic fügt der Magic Mouse einen Mittelklick hinzu, mit einstellbaren Zonen und Geschwindigkeit. Kostenlos auf GitHub:";
+"Magic Middle Click adds middle click to the Magic Mouse, with adjustable zones and speed. Free on GitHub:" = "Magic Middle Click fügt der Magic Mouse einen Mittelklick hinzu, mit einstellbaren Zonen und Geschwindigkeit. Kostenlos auf GitHub:";
 "Accessibility permission is missing" = "Berechtigung für Bedienungshilfen fehlt";
-"Without it, zone clicks and scrolling don’t work. Turn it on for CentralClic in System Settings → Privacy & Security → Accessibility. If it already appears on, remove it with “–” and add it again: after an update, macOS may see the app as a different one." = "Ohne sie funktionieren Zonenklicks und Scrollen nicht. Aktiviere sie für CentralClic unter Systemeinstellungen → Datenschutz & Sicherheit → Bedienungshilfen. Wenn sie bereits aktiviert ist, entferne sie mit „–“ und füge sie erneut hinzu: Nach einem Update hält macOS die App möglicherweise für eine andere.";
+"Without it, zone clicks and scrolling don’t work. Turn it on for Magic Middle Click in System Settings → Privacy & Security → Accessibility. If it already appears on, remove it with “–” and add it again: after an update, macOS may see the app as a different one." = "Ohne sie funktionieren Zonenklicks und Scrollen nicht. Aktiviere sie für Magic Middle Click unter Systemeinstellungen → Datenschutz & Sicherheit → Bedienungshilfen. Wenn sie bereits aktiviert ist, entferne sie mit „–“ und füge sie erneut hinzu: Nach einem Update hält macOS die App möglicherweise für eine andere.";
 "Open Accessibility Settings" = "Bedienungshilfen-Einstellungen öffnen";
 "Clicks" = "Klicks";
 "Movement" = "Bewegung";
@@ -49,7 +49,7 @@
 "Pointer speed" = "Zeigergeschwindigkeit";
 "System Settings goes up to %@; here you can go further." = "Die Systemeinstellungen gehen bis %@; hier kannst du darüber hinausgehen.";
 "Turn off pointer acceleration" = "Zeigerbeschleunigung deaktivieren";
-"Without acceleration, the pointer always moves the same distance for each centimeter you move the mouse, fast or slow. The speed above still applies." = "Ohne Beschleunigung legt der Zeiger für jeden Zentimeter Mausbewegung immer dieselbe Strecke zurück, egal ob schnell oder langsam. Die Geschwindigkeit oben gilt weiterhin.";
+"Without acceleration, the pointer always moves the same distance for each centimeter you move the mouse, fast or slow. macOS then uses a fixed speed, so the speed slider is turned off." = "Ohne Beschleunigung legt der Zeiger für jeden Zentimeter Mausbewegung immer dieselbe Strecke zurück, egal ob schnell oder langsam. macOS verwendet dann eine feste Geschwindigkeit, daher ist der Geschwindigkeitsregler deaktiviert.";
 "Scrolling speed" = "Scrollgeschwindigkeit";
 "When you slide your finger on the mouse. ×1 is the macOS speed. Magic Mouse only." = "Beim Wischen mit dem Finger über die Maus. ×1 ist die macOS-Geschwindigkeit. Nur Magic Mouse.";
 "Scroll direction" = "Scrollrichtung";
@@ -59,7 +59,7 @@
 "Natural: content follows your finger, like on iPhone. Classic: like a mouse wheel. Only the Magic Mouse changes; the trackpad keeps the macOS setting (currently %@)." = "Natürlich: Der Inhalt folgt deinem Finger, wie beim iPhone. Klassisch: wie ein Mausrad. Nur die Magic Mouse ändert sich; das Trackpad behält die macOS-Einstellung (derzeit %@).";
 "natural" = "natürlich";
 "classic" = "klassisch";
-"Pointer speed affects mice, not the trackpad. Scrolling and its direction need the Accessibility permission. If you turn CentralClic off or quit it, the macOS settings come back." = "Die Zeigergeschwindigkeit gilt für Mäuse, nicht für das Trackpad. Scrollen und Scrollrichtung benötigen die Berechtigung für Bedienungshilfen. Wenn du CentralClic deaktivierst oder beendest, gelten wieder die macOS-Einstellungen.";
+"Pointer speed affects mice, not the trackpad. Scrolling and its direction need the Accessibility permission. If you turn Magic Middle Click off or quit it, the macOS settings come back." = "Die Zeigergeschwindigkeit gilt für Mäuse, nicht für das Trackpad. Scrollen und Scrollrichtung benötigen die Berechtigung für Bedienungshilfen. Wenn du Magic Middle Click deaktivierst oder beendest, gelten wieder die macOS-Einstellungen.";
 "macOS (%@)" = "macOS (%@)";
 "Use macOS Setting" = "macOS-Einstellung verwenden";
 "Version %@" = "Version %@";
@@ -68,11 +68,11 @@
 "Check Now" = "Jetzt suchen";
 "Download version %@" = "Version %@ laden";
 "Check for updates automatically" = "Automatisch nach Updates suchen";
-"Once a day, CentralClic asks GitHub whether there is a new version. No personal data is sent." = "Einmal am Tag fragt CentralClic bei GitHub nach, ob es eine neue Version gibt. Es werden keine persönlichen Daten gesendet.";
-"Do you like CentralClic? A star on GitHub or sharing it with a friend helps a lot." = "Gefällt dir CentralClic? Ein Stern auf GitHub oder das Teilen mit Freunden hilft sehr.";
+"Once a day, Magic Middle Click asks GitHub whether there is a new version. No personal data is sent." = "Einmal am Tag fragt Magic Middle Click bei GitHub nach, ob es eine neue Version gibt. Es werden keine persönlichen Daten gesendet.";
+"Do you like Magic Middle Click? A star on GitHub or sharing it with a friend helps a lot." = "Gefällt dir Magic Middle Click? Ein Stern auf GitHub oder das Teilen mit Freunden hilft sehr.";
 "Share" = "Teilen";
 "Checking…" = "Suche …";
 "Version %@ is available." = "Version %@ ist verfügbar.";
 "Couldn’t check for updates." = "Updates konnten nicht gesucht werden.";
-"CentralClic is up to date." = "CentralClic ist auf dem neuesten Stand.";
+"Magic Middle Click is up to date." = "Magic Middle Click ist auf dem neuesten Stand.";
 "Not checked yet." = "Noch nicht geprüft.";
