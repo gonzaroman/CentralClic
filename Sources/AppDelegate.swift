@@ -9,7 +9,6 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSWind
     private var sigterm: DispatchSourceSignal?
 
     func applicationDidFinishLaunching(_ notification: Notification) {
-        LegacySettings.migrateIfNeeded()
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
         let image = NSImage(systemSymbolName: "computermouse", accessibilityDescription: "Magic Middle Click")
         image?.isTemplate = true
@@ -22,6 +21,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate, NSWind
         Multitouch.shared.onDevicesChanged = { count in
             LiveTouches.shared.connectedMice = count
             // A freshly connected mouse starts with the macOS values: apply ours again.
+            MouseTuning.shared.forgetApplied()
             AppSettings.shared.applyMotion()
         }
 

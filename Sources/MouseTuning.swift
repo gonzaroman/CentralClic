@@ -46,9 +46,19 @@ final class MouseTuning {
         set(HIDKey.scroll, MouseTuning.globalDouble(PrefKey.scroll) ?? 0.3125)
     }
 
+    /// Last value written for each key, so moving an unrelated slider doesn't rewrite it dozens of times a second.
+    private var applied: [String: Int] = [:]
+
+    /// Forgets what was written, so the next call writes again. Call it when a mouse (re)connects:
+    /// a new device starts with the macOS values.
+    func forgetApplied() { applied.removeAll() }
+
     private func set(_ key: String, _ value: Double) {
         // The HID system stores these values as 16.16 fixed point.
-        setRaw(key, NSNumber(value: Int((value * 65536).rounded())))
+        let fixed = Int((value * 65536).rounded())
+        guard applied[key] != fixed else { return }
+        applied[key] = fixed
+        setRaw(key, NSNumber(value: fixed))
     }
 
     private func setRaw(_ key: String, _ value: NSNumber) {

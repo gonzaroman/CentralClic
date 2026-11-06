@@ -186,27 +186,3 @@ final class LiveTouches: ObservableObject {
     @Published var accessibilityGranted = false
 }
 
-/// Before it was renamed, the app was called CentralClic, with the bundle id com.gonzaroman.centralclic.
-/// On the first launch under the new id, copy those settings so nobody loses their zones and speeds.
-enum LegacySettings {
-    private static let oldDomain = "com.gonzaroman.centralclic"
-    private static let keys = ["enabled", "zoneLeft", "zoneCenter", "zoneRight", "pointerSpeed", "scrollMultiplier",
-                               "naturalScroll", "disableAcceleration", "launchedBefore", "middleClickCount",
-                               "askedForSupport", "checkForUpdates", "lastUpdateCheck", "notifiedUpdateVersion"]
-
-    /// Must run before AppSettings, Updater or Engagement read their values.
-    static func migrateIfNeeded() {
-        let defaults = UserDefaults.standard
-        guard defaults.object(forKey: "migratedFromCentralClic") == nil else { return }
-        defaults.set(true, forKey: "migratedFromCentralClic")
-        guard let old = UserDefaults(suiteName: oldDomain) else { return }
-        var copied = 0
-        for key in keys {
-            if let value = old.object(forKey: key), defaults.object(forKey: key) == nil {
-                defaults.set(value, forKey: key)
-                copied += 1
-            }
-        }
-        if copied > 0 { appLog.notice("Copied \(copied, privacy: .public) settings from CentralClic") }
-    }
-}
